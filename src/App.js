@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import RequireAuth from './hoc/RequireAuth';
 import Feed from './pages/Feed';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Posts from './pages/Posts';
 
 function App() {
   return (
@@ -12,11 +14,20 @@ function App() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/feed" element={<Feed />} />
 
+        <Route path="/feed" element={
+          <RequireAuth>
+            <Feed />
+          </RequireAuth>} />
+          
+        <Route path='/posts' element={
+          <RequireAuth>
+            <Posts />
+          </RequireAuth>
+        } />
       </Routes>
 
-    </div>
+    </div >
   );
 }
 
