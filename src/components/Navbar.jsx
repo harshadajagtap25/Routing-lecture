@@ -28,7 +28,7 @@ function Navbar() {
     >
       Navbar
       <Link to="">Home</Link>
-      <Link to="/feed">Feeds</Link>
+      <Link to="/feed">Feed</Link>
       <Link to ="/posts">Posts</Link>
       <button onClick={handleLoginClick}>{isAuth ? "Logout" : "Login"} </button>
     </div>

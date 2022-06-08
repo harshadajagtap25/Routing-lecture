@@ -40,12 +40,14 @@ function Login() {
           type="email"
           name="email"
           onChange={handleOnChange}
+          value="eve.holt@reqres.in"
         />
         <input
           placeholder="password"
           type="password"
           name="password"
           onChange={handleOnChange}
+          value="cityslicka"
         />
         <button type="submit">Submit</button>
       </form>
