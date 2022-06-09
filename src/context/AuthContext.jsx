@@ -13,22 +13,22 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     fetch("https://reqres.in/api/login", {
-      
-      method: "POST",
-      headers: { "context-type": "application/json" },
-      data: JSON.stringify({
-        email: "eve.holt@reqres.in",
-        password: "cityslicka",
-      }),
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: "eve.holt@reqres.in",
+      password: "cityslicka"
     })
-      .then((r) => r.json())
-      .then((d) => {
-        // setIsAuth(d.token);
-        console.log(d);
-        // localStorage("token", d.token);
-      });
+  })
+    .then((r) => r.json())
+    .then((d) => {setIsAuth(d.token)
+    localStorage.setItem("token",d.token)})
+    .catch((e) => console.log(e));
+    
 
-    // setIsAuth(true);
+    setIsAuth(true);
 
     // if(state.from){
     //     navigate(state.from, {replace:true})
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.setItem("token", "");
 
-    // setIsAuth(false);
+    setIsAuth(false);
     // navigate("/")
   };
   useEffect(() => {
