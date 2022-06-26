@@ -4,13 +4,13 @@ import { AuthContext } from "../context/AuthContext";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { isAuth, logout } = useContext(AuthContext);
+    const { isAuth, logout } = useContext(AuthContext);
+    console.log(isAuth)
 
   const handleLoginClick = () => {
     if (isAuth) {
       //wants to logout
       logout();
-      navigate("/");
     } else {
       //wants to login
       navigate("/login");

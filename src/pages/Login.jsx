@@ -36,14 +36,14 @@ function Login() {
         onSubmit={handleSubmit}
       >
         <input
-          placeholder="email"
+          placeholder="eve.holt@reqres.in"
           type="email"
           name="email"
           onChange={handleOnChange}
           value="eve.holt@reqres.in"
         />
         <input
-          placeholder="password"
+          placeholder="cityslicka"
           type="password"
           name="password"
           onChange={handleOnChange}
